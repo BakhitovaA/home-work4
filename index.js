@@ -17,13 +17,11 @@ const output = fs.createWriteStream("exit.txt");
 input.pipe(crypto.createHash('md5')).pipe(process.stdout);
 input.pipe(crypto.createHash('md5')).pipe(output);
 
-//Расширить предыдущие решние используя stream.Transform
+//Расширить предыдущее решение используя stream.Transform
 
 const Transform = require('stream').Transform;
 
-/*
-Реализовать свой класс, который будет конвертировать результат crypto.createHash() (бинарные данные - хеш-сумма) в hex формат.
-*/
+//Реализовать свой класс, который будет конвертировать результат crypto.createHash() (бинарные данные - хеш-сумма) в hex формат.
 
 class HashTransformer extends Transform {
         constructor(options={}) {
